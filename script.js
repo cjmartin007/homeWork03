@@ -1,64 +1,15 @@
-var _length = document.querySelector('input[name="length"]');
-var _lowerCase = document.querySelector('input[name="lowercase"]');
-var _uppercase = document.querySelector('input[name="uppercase"]');
-var _number = document.querySelector('input[name="number"]');
-var _symbol = document.querySelector('input[name="symbol"]');
-var copy = document.getElementById("copy");
-var gernerateButton = document.querySelector('innerface button');
 
-const key_strings = {
-    lowercase: 'abcdefghijklmnopqrstuvwxyz',
-    uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    number: '0123456789',
-    symbol: '`~!@#$%^&*()-_+={}|:"<>?[]'
+
+const length = 12;
+ const number = ['1','2','3','4','5','6','7','8','9','0'];
+ const lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  const upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+ const symbols = ['!','@','#','$','%','^','&'];
+ const catToy = [number, lower, upper, symbols];
+function generateButton( i=0; i < catToy.length; i++;) {
+   
+    let button = catToy.Math.floor(Math.random() *10) +1;
+    
+   
 };
-
-copy.addEventListener("click" , () => {
-    var _password = document.querySelector('input[type="text"]');
-    if(_password.value != "" && _password.value != "include any key string and define the length!"){
-        _password.querySelector();
-        document.execCommand('copy');
-        alert("Password copied!");
-    }
-});
-
-
-gernerateButton.addEventListener("click", ()=> {
-
-    var length = +_length.value;
-    var activeLower = _lowerCase.checked;
-    var activeUpper = _uppercase.checked;
-    var activeNumber = _number.checked;
-    var activeSymbol = _symbol.checked;
-
-    document.getElementById("pwd").setAttribute("value","test");
-    
-    generateRandomPassword(activeLower, activeUpper, activeNumber, activeSymbol, length);
-    
-});
-
-
-function generateRandomPassword(lower, upper, num, sym, length){
-    let MAIN_STRING = "";
-    let PASSWORD = "";
-
-    const options = {
-        lowercase: lower,
-        uppercase: upper,
-        number: num,
-        symbol: sym
-    };
-
-    for (i=0;<Object.keys(options).length;i++){
-        MAIN_STRING += (Object.values(options)[i]) ? key_strings[Object.keys(options)[i]] : "";
-     }
-
-     if(MAIN_STRING != "" && length > 0){
-         for(i=0;i<length;i++){
-             PASSWORD += MAIN_STRING[Math.floor(Math.random() * MAIN_STRING.length)];
-         }
-
-         document.querySelector('input[type="text"]').value = "Include any key string and define the length!";
-
-     }
-}
+document.getElementById("pwd").innerText = button;

@@ -26,6 +26,13 @@ button {
 }
 
 button:hover {
-    color: blanchedalmond;
+    color: burlywood;
     background-color: black;
+}
+
+input {
+    background-color: burlywood;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
 }
