@@ -54,8 +54,10 @@ function generateButton() {
  const v14 = getRandom(symbols2);
  const v15 = getRandom(symbols3);
  const v16 = getRandom(symbols4);
+ 
  const catToy = [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16];
-const pw = `${getRandom(catToy)}
+
+ const pw = `${getRandom(catToy)}
 ${getRandom(catToy)}
 ${getRandom(catToy)}
 ${getRandom(catToy)}
@@ -82,3 +84,12 @@ function getRandom(arr) {
  const $ = (elm)=>{ 
      return document.getElementById(elm); 
     }
+
+    function Copy() {
+        const ct = document.getElementById("pwd");
+        
+        ct.select();
+        ct.setSelectionRange(0, 20)
+        document.execCommand("copy");
+        console.log("Copied to Clipbboard: " + ct.value);
+      };
